@@ -1,16 +1,10 @@
 {
-    "name": "agilize/poo-challenge",
+    "name": "agilize/basic1-challenge",
     "type": "project",
     "autoload": {
         "psr-4": {
-            "Agilize\\PooChallenge\\": "src/"
+            "Agilize\\Basic1Challenge\\": "src/"
         }
     },
-    "authors": [
-        {
-            "name": "Ernesto Barros Amorim",
-            "email": "ernesto.amorim@gmail.com"
-        }
-    ],
     "require": {}
 }

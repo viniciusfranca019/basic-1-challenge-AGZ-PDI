@@ -1,6 +1,6 @@
 <?php
 
-namespace Agilize\PooChallenge;
+namespace Agilize\Basic1Challenge;
 
 class Main
 {
