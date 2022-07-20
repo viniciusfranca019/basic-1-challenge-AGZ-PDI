@@ -16,12 +16,12 @@ class Main
     {
         if ($ct instanceof \DateTime) {
             // overnight
-            if ($ct->format('H') > 22 || $ct->format('H') < 6) {
+            if (intval($ct->format('H')) > 22 || intval($ct->format('H')) < 6) {
                 // valor overnight
                 return $dist * 3.9;
             } else {
                 // é domingo
-                if ($ct->format('w') === 0) {
+                if (intval($ct->format('w')) === 0) {
                     return $dist * 3;
                 } else {
                     // valor normal
