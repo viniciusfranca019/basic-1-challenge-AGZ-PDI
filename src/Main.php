@@ -4,6 +4,10 @@ namespace Agilize\Basic1Challenge;
 
 class Main
 {
+    const MIDNIGHT_SERVICE_TAX = 3.9,
+        SUNDAY_SERVICE_TAX = 3,
+        NORMAL_SERVICE_TAX = 2.1;
+
     /**
      * Ct - o horário atual (currentTime)
      * dist - distância
@@ -19,14 +23,14 @@ class Main
         }
 
         if ($this->currentTimeIsBetween10PMAnd6AM($currentTime)) {
-            return $distance * 3.9;
+            return $distance * self::MIDNIGHT_SERVICE_TAX;
         }
 
         if ($this->isSunday($currentTime)) {
-            return $distance * 3;
+            return $distance * self::SUNDAY_SERVICE_TAX;
         }
 
-        return $distance * 2.1;
+        return $distance * self::NORMAL_SERVICE_TAX;
     }
 
     /**
