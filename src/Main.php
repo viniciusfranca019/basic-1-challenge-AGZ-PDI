@@ -8,24 +8,24 @@ class Main
      * Ct - o horário atual (currentTime)
      * dist - distância
      * calcTrip - calcula a tarifa de um uber
-     * @param $ct
-     * @param $dist
+     * @param $currentTime
+     * @param $distance
      * @return float|int
      */
-    public function calcTrip($ct, $dist)
+    public function calcTrip($currentTime, $distance)
     {
-        if ($ct instanceof \DateTime) {
+        if ($currentTime instanceof \DateTime) {
             // overnight
-            if (intval($ct->format('H')) > 22 || intval($ct->format('H')) < 6) {
+            if (intval($currentTime->format('H')) > 22 || intval($currentTime->format('H')) < 6) {
                 // valor overnight
-                return $dist * 3.9;
+                return $distance * 3.9;
             } else {
                 // é domingo
-                if (intval($ct->format('w')) === 0) {
-                    return $dist * 3;
+                if (intval($currentTime->format('w')) === 0) {
+                    return $distance * 3;
                 } else {
                     // valor normal
-                    return $dist * 2.1;
+                    return $distance * 2.1;
                 }
             }
         } else {
